@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloons!</title>
+	<style>
+		.balloon {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		border-radius: 65%;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		}
+		.balloon.clicked {
+    width: 210px;
+    height: 210px;
+}
+	</style>
+
+</head>
+<body>
+	<div class="balloon" id="balloon"></div>
+	<script>
+		const balloon = document.getElementById('balloon');
+		let size = 200;
+
+		balloon.addEventListener('click', function()
+		{
+			balloon.classList.toggle('clicked');
+			size += 10;
+			if (size <= 420)
+			{
+				balloon.style.width = size + 'px';
+				balloon.style.height = size + 'px';
+			}
+			else
+			{
+				size = 200;
+				balloon.style.width = '200px';
+				balloon.style.height = '200px';
+			}
+		});
+
+		if (balloon.offsetWidth > 420)
+		{
+			balloon.classList.remove('clicked', 'green', 'blue');
+			balloon.style.width = '200px';
+			balloon.style.height = '200px';
+		}
+
+		balloon.addEventListener('mouseover', function() {
+			if (balloon.offsetWidth > 200)
+			{
+				balloon.style.width = (balloon.offsetWidth - 5) + 'px';
+				balloon.style.height = (balloon.offsetHeight - 5) + 'px';
+			}
+			if (balloon.classList.contains('red'))
+			{
+				balloon.classList.replace('red', 'blue');
+			}
+			else if (balloon.classList.contains('blue'))
+			{
+				balloon.classList.replace('blue', 'green');
+			}
+			else if (balloon.classList.contains('green'))
+			{
+				balloon.classList.remove('clicked', 'green');
+			}
+		})
+	</script>
+</body>
+</html>

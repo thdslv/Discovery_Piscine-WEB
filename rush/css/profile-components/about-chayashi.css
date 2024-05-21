@@ -1,0 +1,15 @@
+.about-chayashi {
+	display: flex;
+	justify-content: center;
+}
+
+.center-about-chayashi {
+	align-items: center;
+}
+
+  @media only screen and (max-width: 768px) {
+	.about-chayashi {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  }

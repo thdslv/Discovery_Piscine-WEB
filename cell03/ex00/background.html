@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="background.css">
+	<script>
+		function change_color() {
+			var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF', '#000000', '#FFFFFF', '#FFA500', '#800080', '#FFC0CB', '#008080']
+			var color = colors[Math.floor(Math.random() * colors.length)]
+			document.body.style.backgroundColor = color;
+		}
+	</script>
+	<title>Rave Party</title>
+</head>
+<body>
+	<button id="button1" onclick="change_color()">Click me!</button>
+</body>
+</html>
